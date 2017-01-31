@@ -1,0 +1,9 @@
+<% if @user.errors.any? %>
+  <%= erb :"_errors", locals: {errors: @user.errors.full_messages } %>
+<% end %>
+
+<form method="post" action="/users">
+  <input type="text" name="user[username]" placeholder="username" value="<%= @user.username %>">
+  <input type="password" name="user[password]" placeholder="password">
+  <input type="submit">
+</form>
